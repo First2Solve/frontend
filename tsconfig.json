@@ -5,7 +5,11 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
-    "jsx": "react"
+    "jsx": "react",
+    "types": [
+      "node",
+      "react-router-dom"
+    ]
   },
   "include": [
     "./src/**/*"

@@ -4,7 +4,8 @@ const path = require('path');
 const htmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './index.html',
   filename: 'index.html',
-  inject: 'body'
+  inject: 'body',
+  entry: './index.html'
 })
 
 module.exports  = {
@@ -27,7 +28,11 @@ module.exports  = {
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      { test: /\.(tsx|ts)?$/, loader: 'awesome-typescript-loader' },
+
+      { test: /\.scss?$/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
+
+      { test: /\.(png|jpe?g|gif|svg)$/, use: [{ loader: 'file-loader' , options: {} }] },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },

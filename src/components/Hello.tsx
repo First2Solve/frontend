@@ -1,4 +1,6 @@
 import * as React from 'react';
+import '../styles/Hello.scss';
+const sample = require('../assets/sample.png');
 
 export interface HelloProps { 
   compiler: string; 
@@ -11,6 +13,9 @@ export interface HelloProps {
 
 export class Hello extends React.Component<HelloProps, {}> {
   render() {
-    return <h1>Hellox, from { this.props.compiler } and { this.props.framework }!</h1>;
+    return <div>
+      <h1>Hellox, from { this.props.compiler } and { this.props.framework }!</h1>
+      <img src={ sample } />
+    </div>;
   }
 }
