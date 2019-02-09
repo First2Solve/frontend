@@ -1,4 +1,4 @@
-import { Route, Router, Link } from 'react-router-dom';
+import { Route, HashRouter, Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import * as React from 'react';
 
@@ -10,11 +10,11 @@ export interface RouterProps {};
 
 export default class Routes extends React.Component<RouterProps, {}> {
   render() {
-    return <Router history={ history }>
+    return <HashRouter>
         <div>
-          <Route exact path="/" component={Hello} />
-          <Route path="/hello" component={Hello} />
+          <Route exact path="/" component={ Hello } />
+          <Route path="/hello" component={ Hello } />
         </div>
-    </Router>
+    </HashRouter>
   }
 };
