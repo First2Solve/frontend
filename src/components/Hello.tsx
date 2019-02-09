@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../styles/Hello.scss';
 
 export interface HelloProps { 
   compiler: string; 
